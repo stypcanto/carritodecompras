@@ -13,6 +13,7 @@ const cardsContainer = document.querySelector('.cards-container');
 const productDetailSecondary = document.querySelector('.gray-background');
 const productDetailSecondaryButomClose = document.querySelector('.product-detail-secondary-close');
 
+const openPopup = document.querySelector('#switch');
 
 
 // Agregar event listeners a los elementos seleccionados
@@ -20,7 +21,7 @@ menuEmail.addEventListener('click', toggleDesktopMenu);
 menuHamButon.addEventListener('click', toggleMobileMenu);
 carMenuButon.addEventListener('click', togglecarMenuContainer);
 productDetailSecondaryButomClose.addEventListener('click', closeProductDetailSecondary)
-
+openPopup.addEventListener('click',toggleSwitch);
 
 // Función para mostrar/ocultar el menú en pantalla de escritorio
 function toggleDesktopMenu() {
@@ -189,6 +190,15 @@ function renderProducts (arr) {
 renderProducts(productList);
 
 
+function toggleSwitch(){
+    openPopup.classList.remove('inactive');
+    console.log('Hola swtich');
+}
+
+function closePopup() {
+    const switchInput = document.getElementById('switch');
+    switchInput.checked = false;
+  }
 
 
 
