@@ -13,7 +13,7 @@
 body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
-
+  transition: background-color 0.4s, color 0.4s;
   /* 
   background-color: var(--hospital-green);
   background-image: url("./icons/bt_add_to_cart.svg");
@@ -23,6 +23,14 @@ body {
   height: 100%;
   position: relative;
 }
+
+/* Estilos para contenedores de tarjetas en modo oscuro */
+.dark-mode .cards-container {
+  background-color: #333; /* Cambia el color de fondo de los contenedores de tarjetas */
+  color: white; /* Cambia el color del texto a blanco */
+}
+/* Agrega otros estilos según sea necesario */
+
 
 .inactive {
   display: none;
@@ -313,7 +321,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, 280px);
   gap: 26px;
-  margin: 0 5%;
+  
   padding: 120px 26px 80px;
   place-content: center;
   background-color: var(--white);

@@ -1,27 +1,28 @@
 // Seleccionar elementos del DOM
-const menuEmail  = document.querySelector('.navbar-email');
-const desktopMenu  = document.querySelector('.desktop-menu');
+const menuEmail = document.querySelector('.navbar-email');
+const desktopMenu = document.querySelector('.desktop-menu');
 
-const menuHamButon  = document.querySelector('.menu');
-const mobileMenu  = document.querySelector('.mobile-menu');
+const menuHamButon = document.querySelector('.menu');
+const mobileMenu = document.querySelector('.mobile-menu');
 
-const carMenuButon  = document.querySelector('.navbar-shopping-cart');
-const carMenuContainer  = document.querySelector('.product-detail');
+const carMenuButon = document.querySelector('.navbar-shopping-cart');
+const carMenuContainer = document.querySelector('.product-detail');
 
 const cardsContainer = document.querySelector('.cards-container');
 
 const productDetailSecondary = document.querySelector('.gray-background');
 const productDetailSecondaryButomClose = document.querySelector('.product-detail-secondary-close');
 
-const openPopup = document.querySelector('#switch');
-
+//const openPopup = document.querySelector('#switch');
+const switchInput = document.getElementById('switch');
+const body = document.body;
 
 // Agregar event listeners a los elementos seleccionados
 menuEmail.addEventListener('click', toggleDesktopMenu);
 menuHamButon.addEventListener('click', toggleMobileMenu);
 carMenuButon.addEventListener('click', togglecarMenuContainer);
 productDetailSecondaryButomClose.addEventListener('click', closeProductDetailSecondary)
-openPopup.addEventListener('click',toggleSwitch);
+//openPopup.addEventListener('click', toggleSwitch);
 
 // Función para mostrar/ocultar el menú en pantalla de escritorio
 function toggleDesktopMenu() {
@@ -147,7 +148,7 @@ productList.push({
 });
 
 // Función para renderizar los productos en la interfaz
-function renderProducts (arr) {
+function renderProducts(arr) {
     for (product of productList) {
 
         const productCard = document.createElement('div');
@@ -163,7 +164,7 @@ function renderProducts (arr) {
         const productInfoDiv = document.createElement('div');
 
         const productPrice = document.createElement('p');
-        productPrice.innerText ='$' + product.price;
+        productPrice.innerText = '$' + product.price;
         const productName = document.createElement('p');
         productName.innerText = product.name;
 
@@ -189,7 +190,9 @@ function renderProducts (arr) {
 // Llamar a la función para renderizar productos
 renderProducts(productList);
 
+/*
 
+Funcion para cargar un pop-up a través de un switch
 function toggleSwitch(){
     openPopup.classList.remove('inactive');
     console.log('Hola swtich');
@@ -200,5 +203,14 @@ function closePopup() {
     switchInput.checked = false;
   }
 
+*/
 
 
+
+switchInput.addEventListener('change', function () {
+    if (this.checked) {
+      body.classList.add('dark-mode'); // Agrega la clase para modo oscuro
+    } else {
+      body.classList.remove('dark-mode'); // Remueve la clase de modo oscuro
+    }
+  });
